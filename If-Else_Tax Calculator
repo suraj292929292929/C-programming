@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    float income, tax = 0;
+    float tax_one, tax_two, tax_total;
+    float exceeding, exceeding_one, exceeding_two;
+
+    
+    scanf("%f", &income);
+
+    if (income >= 0) {
+        if (income <= 250000) {
+            tax = 0;  
+        } 
+        else if (income <= 500000) {
+            exceeding = income - 250000;
+            tax = exceeding * 0.05;  
+        } 
+        else if (income <= 1000000) {
+            exceeding = 500000 - 250000;
+            tax_one = exceeding * 0.05;   
+            exceeding_one = income - 500000;
+            tax_two = exceeding_one * 0.20;   
+            tax_total = tax_one + tax_two;
+            tax = tax_total;
+        } 
+        else {
+            exceeding = 500000 - 250000;
+            tax_one = exceeding * 0.05;   
+            exceeding_one = 1000000 - 500000;
+            tax_two = exceeding_one * 0.20;   
+            exceeding_two = income - 1000000;
+            tax_total = tax_one + tax_two + (exceeding_two * 0.30);  
+            tax = tax_total;
+        }
+        printf("%.2f\n", tax);   
+    } else {
+        printf("INVALID\n");
+    }
+    return 0;
+}
