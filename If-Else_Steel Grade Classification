@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int Hardness,Tensile_strength;
+    float Carbon_content;
+    
+    scanf("%d %f %d", &Hardness, &Carbon_content, &Tensile_strength);
+
+    
+    int condition1 = (Hardness > 50);
+    int condition2 = (Carbon_content < 0.7);
+    int condition3 = (Tensile_strength > 5600);
+    
+    if(condition1 && condition2 && condition3){
+        printf("The grade of the steel is: 10\n");
+        printf("All of the conditions met.");
+    }
+    else if(condition1 && condition2){
+        printf("The grade of the steel is: 9\n");
+        printf("Two conditions met.");
+    }
+    else if(condition2 && condition3){
+         printf("The grade of the steel is: 8\n");
+         printf("Two conditions met.");
+    }
+    else if(condition3 && condition1){
+        printf("The grade of the steel is: 7\n");
+        printf("Two conditions met.");
+        
+    }
+    else if(condition1 || condition2 || condition3){
+        printf("The grade of the steel is: 6\n");
+        printf("Only one condition met.");
+    }
+    else{
+        printf("The grade of the steel is: 5\n");
+        printf("None of the conditions met.");
+    }
+    return 0;
+}
