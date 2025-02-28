@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+  float units,rem_units;
+  float bill_one,bill_second,bill_third,tt_bill,new_bill;
+  scanf("%f",&units);
+  if(units >= 0){
+      // tt bill cal.
+     if(units <= 100){
+      tt_bill = 5 * units;
+     }
+     else if(units > 100 && units <= 300){
+      bill_one = 100 * 5;
+      rem_units = units - 100;
+      bill_second = rem_units * 7;
+      tt_bill = bill_one + bill_second;
+     }
+     else{
+      bill_one = 100 * 5;
+      bill_second = 200 * 7;
+      rem_units = units - 300;
+      bill_third = rem_units * 10;
+      tt_bill = bill_one + bill_second + bill_third;
+     }
+      // for discount
+      if(tt_bill <= 1200){
+       new_bill =  tt_bill - (tt_bill * 10 / 100);
+      }
+      else{
+      new_bill = tt_bill;
+      }
+      printf("The electricity bill is: %.2f.",new_bill);
+  }
+  else{
+     printf("Invalid Input!");
+  }
+    return 0;
+}
