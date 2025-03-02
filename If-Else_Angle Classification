@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int x, angle;
+    scanf("%d", &x);
+
+    angle = x % 360;  // 0-360
+
+    if (angle == 0) {  
+        if (x == 0) {
+            printf("Acute Angle\n");  
+        } else {
+            printf("Full Rotation\n");  
+        }
+    }
+    else if (angle > 0 && angle < 90) {
+        printf("Acute Angle\n");
+    }
+    else if (angle == 90) {
+        printf("Right Angle\n");
+    } 
+    else if (angle > 90 && angle < 180) {
+        printf("Obtuse Angle\n");
+    } 
+    else if (angle == 180) {
+        printf("Straight Angle\n");
+    } 
+    else if (angle > 180 && angle < 360) {
+        printf("Reflex Angle\n");  
+    } 
+
+    return 0;
+}
