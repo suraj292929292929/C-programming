@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+    int n;
+    printf("enter the no of element present in the array: ");
+    scanf("%d",&n);
+    int arr[n];
+    int count = 0;
+    for(int i = 0;i<n;i++){
+        printf("enter the %d index elements: ",i);
+        scanf("%d",&arr[i]);
+    }
+     int target ; 
+     printf("enter the target value: ");
+    scanf("%d",&target);
+    for(int i = 0;i<n;i++){
+        if(arr[i]>target){
+            count++;     
+        }    
+    }
+  
+   printf("Number of elements greater than %d is: %d\n ",target,count);
+
+}
